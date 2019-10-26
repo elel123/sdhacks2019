@@ -3,7 +3,7 @@ import pygame
 #This class will serve as the "interface" for all the game scenes
 class GameScene():
 
-	def __init__(self, sceneName, door1 =None, door2 =None):
+	def __init__(self, sceneName, door1 =None, door2 =None, gameDisplay=None):
 		#Some instance variables to be inherited by other gameScenes
 		self.showScene = False
 		self.sceneItems = []
@@ -13,13 +13,14 @@ class GameScene():
 		self.door1 = door1
 		self.door2 = door2
 
-
+		self.gameDisplay = gameDisplay
 
 
 	def setSceneState(self):
 		showScene = not(showScene)
 
-    """Changes the scene to a new scene
+    """
+	Changes the scene to a new scene
 
     Attributes
     ----------
@@ -37,8 +38,8 @@ class GameScene():
 
     Attributes
     ----------
-    	trash : Trash and Trash Bins
-    		the trash and bins to be added
+    	trash : Trash
+    		the trash to be added
     """
 	def addToScene(self, item):
 		sceneItem.append(item)

@@ -37,8 +37,8 @@ class GameScene():
 
     Attributes
     ----------
-    	trash : Trash
-    		the trash to be added
+    	trash : Trash and Trash Bins
+    		the trash and bins to be added
     """
 	def addToScene(self, item):
 		sceneItem.append(item)

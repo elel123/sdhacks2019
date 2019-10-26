@@ -22,7 +22,7 @@ while gameIsRunning:
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
-			gameRunning = False
+			gameIsRunning = False
 
 
 	#Update the game

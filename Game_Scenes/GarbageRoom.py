@@ -8,6 +8,7 @@ class GarbageRoom(GameScene):
 		self.inventory = pygame.Rect(0, 500, 100,800)
 
 	def drawScene(self, event):
-		pygame.draw.rect(self.gameDisplay, [122,112,43], self.inventory)
 		if self.showScene:
 			self.gameDisplay.blit(pygame.transform.scale(self.roomImage, (800,600)), (0,0))
+			pygame.draw.rect(self.gameDisplay, [122,112,43], self.inventory)
+

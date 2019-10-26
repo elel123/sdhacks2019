@@ -21,9 +21,11 @@ gameIsRunning = True
 while gameIsRunning:
 
 	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
-			gameIsRunning = False
+			if event.type == pygame.QUIT:
+				gameIsRunning = False
 
+	sceneManager = GameSceneManager();
+	sceneManager.manage()
 
 	#Update the game
 	clock.tick(60)

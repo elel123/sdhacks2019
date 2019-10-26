@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn sdhacks2019.wsgi --log-file - 

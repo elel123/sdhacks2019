@@ -24,7 +24,7 @@ class GarbageRoom(GameScene):
 		#Method to be called in an infinite loop
 		if self.showScene:
 			self.gameDisplay.blit(pygame.transform.scale(self.roomImage, (800,550)), (0,50))
-			self.trash.drawTrash()
+			trash.drawTrash(event)
 			pygame.draw.rect(self.gameDisplay, [122,112,43], self.inventory)
 
 			#Check if the mouse has hovered over the bins

@@ -14,8 +14,8 @@ class GarbageRoom(GameScene):
 
 		#The trash bins
 		self.compostBin = Bin('compost', 200, 350, self.gameDisplay)
-		self.landfillBin = Bin('landfill', 350, 350, self.gameDisplay)
-		self.recycleBin = Bin('recycle', 500, 350, self.gameDisplay)
+		self.landfillBin = Bin('landfill', 400, 350, self.gameDisplay)
+		self.recycleBin = Bin('recycle', 600, 350, self.gameDisplay)
 
 
 	def drawScene(self, event):
@@ -23,6 +23,27 @@ class GarbageRoom(GameScene):
 		if self.showScene:
 			self.gameDisplay.blit(pygame.transform.scale(self.roomImage, (800,550)), (0,50))
 			pygame.draw.rect(self.gameDisplay, [122,112,43], self.inventory)
+
+			#Check if the mouse has hovered over the bins
+			mousePos = pygame.mouse.get_pos()
+
+			if self.compostBin.contains(mousePos[0], mousePos[1]):
+				self.compostBin.select()
+			else:
+				self.compostBin.deselect()
+
+			if self.landfillBin.contains(mousePos[0], mousePos[1]):
+				self.landfillBin.select()
+			else:
+				self.landfillBin.deselect()			
+
+			if self.recycleBin.contains(mousePos[0], mousePos[1]):
+				self.recycleBin.select()
+			else:
+				self.recycleBin.deselect()
+			
+
+			
 			self.compostBin.drawBin()
 			self.landfillBin.drawBin()
 			self.recycleBin.drawBin()
@@ -33,3 +54,7 @@ class GarbageRoom(GameScene):
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1030473642d39923af359ccbd513ab684ba413b1

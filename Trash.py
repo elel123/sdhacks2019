@@ -21,7 +21,7 @@ class Trash():
 			The y-position of the trash sprite
     """
 
-	def __init__(self, name, trashType, pickedUp, xPos, yPos, trashImage, gameDisplay):
+	def __init__(self, name, trashType, xPos, yPos, trashImage, gameDisplay):
 		self.name = name
 		self.trashType = trashType
 		self.xPos = xPos
@@ -60,12 +60,12 @@ class Trash():
 		return False
 
 	def drawTrash(self, event):
-		self.screen.blit(trashImage, (self.xPos, self.yPos))
-		dragTrash(event)
+		self.screen.blit(pygame.transform.scale(self.trashImage, ((int)(self.trashImage.get_width()/20), (int)(self.trashImage.get_height()/20))), (self.xPos, self.yPos))
+		self.dragTrash(event)
 
 	def dragTrash(self, event):
 		mouse_pos = pygame.mouse.get_pos()
-		if ( contains(mouse_pos[0], mouse_pos[1]) and 
+		if ( self.contains(mouse_pos[0], mouse_pos[1]) and 
 			 event.type == pygame.MOUSEBUTTONDOWN):
 			self.selected = True
 			mouse_x, mouse_y = event.position

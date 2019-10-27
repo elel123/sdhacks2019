@@ -22,13 +22,13 @@ class GameSceneManager():
 
 		initTrashList = []
 
-		initTrashList.append(Trash("Banana Peel", "Compost", False, 0, 50, 'banana.png', self.gameDisplay))
-		initTrashList.append(Trash('Soda can', 'Recycle', False, 50, 50, 'can.png', self.gameDisplay))
-		initTrashList.append(Trash('Beer bottle', 'Recycle', False, 100, 50, 'bottle.png', self.gameDisplay))
-		initTrashList.append(Trash('Chip bag', 'Landfill', False, 150, 50, 'chip_bag.png', self.gameDisplay))
-		initTrashList.append(Trash('Apple core', 'Compost', False, 200, 50, 'apple_core.png', self.gameDisplay))
-		initTrashList.append(Trash('Balloon', 'Landfill', False, 250, 50, 'balloon.png', self.gameDisplay))
-		initTrashList.append(Trash('Watermelon', 'Compost', False, 300, 50, 'watermelon.png', self.gameDisplay))
+		initTrashList.append(Trash("Banana Peel", "Compost", 0, 60, 'banana.png', self.gameDisplay))
+		initTrashList.append(Trash('Soda can', 'Recycle', 100, 60, 'can2.png', self.gameDisplay))
+		initTrashList.append(Trash('Beer bottle', 'Recycle', 200, 60, 'bottle.png', self.gameDisplay))
+		initTrashList.append(Trash('Chip bag', 'Landfill', 300, 60, 'chip_bag.png', self.gameDisplay))
+		initTrashList.append(Trash('Apple core', 'Compost', 400, 60, 'apple_core.png', self.gameDisplay))
+		initTrashList.append(Trash('Balloon', 'Landfill', 450, 60, 'balloon2.png', self.gameDisplay))
+		initTrashList.append(Trash('Watermelon', 'Compost', 550, 60, 'watermelon.png', self.gameDisplay))
 
 
 		#List that contains all the scenes

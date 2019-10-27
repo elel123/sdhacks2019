@@ -61,6 +61,7 @@ class Trash():
 
 	def drawTrash(self, event):
 		self.screen.blit(trashImage, (self.xPos, self.yPos))
+		dragTrash(event)
 
 	def dragTrash(self, event):
 		mouse_pos = pygame.mouse.get_pos()

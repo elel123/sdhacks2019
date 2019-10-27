@@ -28,7 +28,7 @@ class Trash():
 		self.xPos = xPos
 		self.yPos = yPos
 		self.selected = False
-		self.trashImage = pygame.image.load('Images/'+trashImage)
+		self.trashImage = pygame.image.load('Images/' + trashImage)
 
 	def move(self, deltaX, deltaY):
 		self.xPos = xPos + deltaX

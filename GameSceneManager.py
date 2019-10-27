@@ -16,10 +16,10 @@ class GameSceneManager():
 	            Contains all the game scenes that we'll use in the game
 	    """
 		#List that contains all the scenes
-		gameScenes = [GarbageRoom(gameDisplay), None]
+		self.gameScenes = [GarbageRoom(gameDisplay), None]
 
 		#turn on the start screen
-		gameScenes[0].setSceneState()
+		self.gameScenes[0].setSceneState()
 
 
 
@@ -34,6 +34,6 @@ class GameSceneManager():
 
 		"""
 		#This method will be called in the game loop, so anything here will be constantly updated
-		gameScenes[0].drawScene(event)
+		self.gameScenes[0].drawScene(event)
 
 

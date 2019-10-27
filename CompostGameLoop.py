@@ -20,7 +20,7 @@ gameIsRunning = True
 
 
 #Load the images
-bananaImg = pygame.image.load('Images/banana.png')
+#bananaImg = pygame.image.load('Images/banana.png')
 
 #This loop constantly runs to keep the game running     
 #  (until the player exits the window)

@@ -74,5 +74,5 @@ class Trash():
 			self.selected = False
 
 		if self.selected:
-			self.xPos = mouse_x
-			self.yPos = mouse_y
+			self.xPos = mouse_x + (self.image.get_width() / 2.0)
+			self.yPos = mouse_y + (self.image.get_height() / 2.0)

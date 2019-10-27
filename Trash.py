@@ -21,7 +21,7 @@ class Trash():
 			The y-position of the trash sprite
     """
 
-	def __init__(self, name, trashType, pickedUp, xPos, yPos, trashImage, gameDisplay):
+	def __init__(self, name, trashType, xPos, yPos, trashImage, gameDisplay):
 		self.name = name
 		self.trashType = trashType
 		self.xPos = xPos

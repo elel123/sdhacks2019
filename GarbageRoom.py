@@ -1,5 +1,6 @@
 import pygame
 from GameScene import GameScene
+from Trash import Trash
 
 class GarbageRoom(GameScene):
 
@@ -21,6 +22,7 @@ class GarbageRoom(GameScene):
 		if self.showScene:
 			self.gameDisplay.blit(pygame.transform.scale(self.roomImage, (800,600)), (0,0))
 			pygame.draw.rect(self.gameDisplay, [122,112,43], self.inventory)
+
 
 
 

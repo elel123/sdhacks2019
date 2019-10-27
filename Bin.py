@@ -19,8 +19,8 @@ class Bin:
         return self.currentVolume
 
     def move(self, deltaX, deltaY) :
-        xPos+=deltaX
-        yPos+=deltaY
+        self.xPos+=deltaX
+        self.yPos+=deltaY
 
     def select(self):
         self.selected = True

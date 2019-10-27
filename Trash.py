@@ -24,9 +24,16 @@ class Trash():
 	def __init__(self, name, trashType, xPos, yPos, trashImage, gameDisplay):
 		self.name = name
 		self.trashType = trashType
+
+		#Position of the trash on the screen
 		self.xPos = xPos
-		self.pickedUp = False
 		self.yPos = yPos
+
+		#Used for dragging
+		self.xOldMousePos = 0
+		self.yOldMousePos = 0
+
+		self.pickedUp = False
 		self.selected = False
 		self.trashImage = pygame.image.load('Images/'+trashImage)
 		self.screen = gameDisplay
@@ -35,8 +42,8 @@ class Trash():
 
 
 	def move(self, deltaX, deltaY):
-		self.xPos = xPos + deltaX
-		self.yPos = yPos + deltaY
+		self.xPos = self.xPos + deltaX
+		self.yPos = self.yPos + deltaY
 
 	def changeTrash(self, name, trashType):
 		self.name = name
@@ -85,17 +92,17 @@ class Trash():
 
 		mouse_x = mouse_pos[0] 
 		mouse_y = mouse_pos[1]
-		offset_x = 0
-		offset_y = 0
 
 		if ( self.contains(mouse_pos[0], mouse_pos[1]) and 
-			 event.type == pygame.MOUSEBUTTONDOWN):
+			 event.type == pygame.MOUSEBUTTONDOWN and not(self.selected)):
 			self.selected = True
-			offset_x = mouse_x - self.xPos
-			offset_y = mouse_y - self.yPos
+			self.xOldMousePos = mouse_x
+			self.yOldMousePos = mouse_y
+
 		elif event.type == pygame.MOUSEBUTTONUP:
 			self.selected = False
 
 		if self.selected:
-			self.xPos = mouse_x - offset_x 
-			self.yPos = mouse_y - offset_y
+			self.move(mouse_x - self.xOldMousePos, mouse_y - self.yOldMousePos)
+			self.xOldMousePos = mouse_x
+			self.yOldMousePos = mouse_y

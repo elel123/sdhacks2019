@@ -32,7 +32,7 @@ class GameSceneManager():
 
 
 		#List that contains all the scenes
-		self.gameScenes = [GarbageRoom(gameDisplay, initTrashList), None]
+		self.gameScenes = [GarbageRoom(gameDisplay, initTrashList), ]
 
 		#turn on the start screen
 		self.gameScenes[0].setSceneState()

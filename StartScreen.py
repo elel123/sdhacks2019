@@ -18,4 +18,5 @@ class StartScreen(GameScene):
 			self.gameDisplay.blit(pygame.transform.scale(self.roomImage, (800,600)), (0,00))
 			self.gameDisplay.blit(self.text, (200, 0))
 
-		
+	def door(self, event):
+		pass	

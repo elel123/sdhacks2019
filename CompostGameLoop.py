@@ -1,4 +1,6 @@
 import pygame
+from GameSceneManager import GameSceneManager
+
 
 #Initializes some elements of pygame
 pygame.init()
@@ -24,12 +26,16 @@ bananaImg = pygame.image.load('Images/banana.png')
 #  (until the player exits the window)
 while gameIsRunning:
 
+	sceneManager = GameSceneManager(gameDisplay);
+
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			gameIsRunning = False
 
-	#sceneManager = GameSceneManager();
-	#sceneManager.manage()
+		sceneManager.manage(event)
+
+	
+	
 
 	#TEST (ADD A RECT)
 	rect = pygame.Rect(0, 0, 800, 600)

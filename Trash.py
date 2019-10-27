@@ -60,19 +60,19 @@ class Trash():
 		return False
 
 	def drawTrash(self, event):
-		self.screen.blit(trashImage, (self.xPos, self.yPos))
-		dragTrash(event)
+		self.screen.blit(pygame.transform.scale(self.trashImage, (75, 75)), (self.xPos, self.yPos))
+		self.dragTrash(event)
 
 	def dragTrash(self, event):
 		mouse_pos = pygame.mouse.get_pos()
-		if ( contains(mouse_pos[0], mouse_pos[1]) and 
+		mouse_x = mouse_pos[0] 
+		mouse_y = mouse_pos[1]
+		if ( self.contains(mouse_pos[0], mouse_pos[1]) and 
 			 event.type == pygame.MOUSEBUTTONDOWN):
 			self.selected = True
-			mouse_x, mouse_y = event.position
-			offset_x = self.xPos - mouse_x
-			offset_y = self.yPos - mouse_y
-		elif event.type == pygame.MOUSEMOTION:
-			if self.selected:
-				mouse_x, mouse_y = event.position
-				self.xPos = mouse_x + offset_x
-				self.yPos = mouse_y + offset_y
+		elif event.type == pygame.MOUSEBUTTONUP:
+			self.selected = False
+
+		if self.selected:
+			self.xPos = mouse_x
+			self.yPos = mouse_y

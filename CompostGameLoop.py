@@ -18,6 +18,7 @@ clock = pygame.time.Clock()
 #Set up conditions for the infinite game loop
 gameIsRunning = True
 
+sceneManager = GameSceneManager(gameDisplay);
 
 #Load the images
 #bananaImg = pygame.image.load('Images/banana.png')
@@ -26,7 +27,7 @@ gameIsRunning = True
 #  (until the player exits the window)
 while gameIsRunning:
 
-	sceneManager = GameSceneManager(gameDisplay);
+	
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:

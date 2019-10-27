@@ -1,6 +1,6 @@
 import pygame
 from GameSceneManager import GameSceneManager
-
+from Trash import Trash
 
 #Initializes some elements of pygame
 pygame.init()
@@ -43,6 +43,18 @@ while gameIsRunning:
 	#pygame.draw.rect(gameDisplay, [255, 255, 255], rect)
 	#gameDisplay.blit(pygame.transform.scale(bananaImg, (800, 600)), (0, 0))
 
+	# def __init__(self, name, trashType, pickedUp, xPos, yPos, trashImage):
+	# 	self.name = name
+	# 	self.trashType = trashType
+	# 	self.pickedUp = pickedUp
+	# 	self.xPos = xPos
+	# 	self.yPos = yPos
+	# 	self.selected = False
+	# 	self.trashImage = pygame.image.load('Images/' + trashImage)
+	initTrashList = []
+
+	initTrashList.append(Trash("Banana Peel", "Compost", False, xPos, yPos, 'Images/banana.png'))
+	initTrashList.append(Trash('Soda can', 'Recycle', False, xPos, yPos, 'Images/can.png'))
 
 
 	#Update the game

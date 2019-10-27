@@ -21,6 +21,12 @@ gameIsRunning = True
 
 #Load the images
 bananaImg = pygame.image.load('Images/banana.png')
+appleImg = pygame.image.load('Images/apple_core.png')
+balloonImg = pygame.image.load('Images/banana.png')
+bottleImg = pygame.image.load('Images/bottle.png')
+canImg = pygame.image.load('Images/can.png')
+chipBagImg = pygame.image.load('Images/chip_bag.png')
+watermelonImg = pygame.image.load('Images/watermelon.png')
 
 #This loop constantly runs to keep the game running     
 #  (until the player exits the window)
@@ -42,20 +48,6 @@ while gameIsRunning:
 	
 	#pygame.draw.rect(gameDisplay, [255, 255, 255], rect)
 	#gameDisplay.blit(pygame.transform.scale(bananaImg, (800, 600)), (0, 0))
-
-	# def __init__(self, name, trashType, pickedUp, xPos, yPos, trashImage):
-	# 	self.name = name
-	# 	self.trashType = trashType
-	# 	self.pickedUp = pickedUp
-	# 	self.xPos = xPos
-	# 	self.yPos = yPos
-	# 	self.selected = False
-	# 	self.trashImage = pygame.image.load('Images/' + trashImage)
-	initTrashList = []
-
-	initTrashList.append(Trash("Banana Peel", "Compost", False, xPos, yPos, 'Images/banana.png'))
-	initTrashList.append(Trash('Soda can', 'Recycle', False, xPos, yPos, 'Images/can.png'))
-
 
 	#Update the game
 	clock.tick(60)

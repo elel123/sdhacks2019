@@ -4,13 +4,14 @@ from Bin import Bin
 
 class GarbageRoom(GameScene):
 
-	def __init__(self, gameDisplay, door1 =None, door2 =None):
+	def __init__(self, gameDisplay, trashInv, door1 =None, door2 =None):
 		#invoke the super classes' constructor
 		super().__init__("Garbage Room", gameDisplay, door1, door2)
 
 
 		self.roomImage = pygame.image.load('Images/garbage_room.jpg')
 		self.inventory = pygame.Rect(0, 0, 800, 50)
+		self.sceneItems = trashInv
 
 		#The trash bins
 		self.compostBin = Bin('compost', 200, 350, self.gameDisplay)
@@ -42,19 +43,13 @@ class GarbageRoom(GameScene):
 			else:
 				self.recycleBin.deselect()
 			
+			# A list in
 
-			
+			for i in len(self.sceneItems):
+				self.sceneItems[i].drawTrash()
+
 			self.compostBin.drawBin()
 			self.landfillBin.drawBin()
 			self.recycleBin.drawBin()
 
 
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 1030473642d39923af359ccbd513ab684ba413b1

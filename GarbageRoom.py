@@ -1,6 +1,7 @@
 import pygame
 from GameScene import GameScene
 from Bin import Bin
+from Trash import Trash
 
 class GarbageRoom(GameScene):
 
@@ -17,12 +18,14 @@ class GarbageRoom(GameScene):
 		self.compostBin = Bin('compost', 200, 350, self.gameDisplay)
 		self.landfillBin = Bin('landfill', 400, 350, self.gameDisplay)
 		self.recycleBin = Bin('recycle', 600, 350, self.gameDisplay)
+		self.trash = Trash('banana','compost', False, 30, 30, 'banana.png', self.gameDisplay)
 
 
 	def drawScene(self, event):
 		#Method to be called in an infinite loop
 		if self.showScene:
 			self.gameDisplay.blit(pygame.transform.scale(self.roomImage, (800,550)), (0,50))
+			self.trash.drawTrash()
 			pygame.draw.rect(self.gameDisplay, [122,112,43], self.inventory)
 
 			#Check if the mouse has hovered over the bins

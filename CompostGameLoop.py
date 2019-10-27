@@ -28,6 +28,7 @@ canImg = pygame.image.load('Images/can.png')
 chipBagImg = pygame.image.load('Images/chip_bag.png')
 watermelonImg = pygame.image.load('Images/watermelon.png')
 
+
 #This loop constantly runs to keep the game running     
 #  (until the player exits the window)
 while gameIsRunning:

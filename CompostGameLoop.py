@@ -40,8 +40,8 @@ while gameIsRunning:
 	#TEST (ADD A RECT)
 	rect = pygame.Rect(0, 0, 800, 600)
 	
-	pygame.draw.rect(gameDisplay, [255, 255, 255], rect)
-	gameDisplay.blit(pygame.transform.scale(bananaImg, (800, 600)), (0, 0))
+	#pygame.draw.rect(gameDisplay, [255, 255, 255], rect)
+	#gameDisplay.blit(pygame.transform.scale(bananaImg, (800, 600)), (0, 0))
 
 
 

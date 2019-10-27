@@ -11,4 +11,4 @@ class StartScreen(GameScreen):
 		self.font = pygame.font.SysFont("comicsansms", 72)
 		self.text = font.render("Play iCompost")
 
-		
+

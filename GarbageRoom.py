@@ -20,11 +20,11 @@ class GarbageRoom(GameScene):
 		self.recycleBin = Bin('recycle', 600, 350, self.gameDisplay)
 
 
+
 	def drawScene(self, event):
 		#Method to be called in an infinite loop
 		if self.showScene:
 			self.gameDisplay.blit(pygame.transform.scale(self.roomImage, (800,550)), (0,50))
-
 
 			pygame.draw.rect(self.gameDisplay, [122,112,43], self.inventory)
 

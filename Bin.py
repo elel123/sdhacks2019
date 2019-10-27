@@ -32,16 +32,16 @@ class Bin:
         self.selected = False
 
     def contains(self, mouseX, mouseY):
-        if mouseX < self.xPos + 100 and mouseX > self.xPos and \
-           mouseY < self.yPos + 100 and mouseY > self.yPos:
+        if mouseX < self.xPos + 200 and mouseX > self.xPos and \
+           mouseY < self.yPos + 200 and mouseY > self.yPos:
            return True
         else:
             return False
 
     def drawBin(self):
         if self.selected:
-            self.gameDisplay.blit(pygame.transform.scale(self.binImageOpen, (350, 250)), (self.xPos,self.yPos))
+            self.gameDisplay.blit(pygame.transform.scale(self.binImageOpen, (150, 250)), (self.xPos,self.yPos))
         else:
-            self.gameDisplay.blit(pygame.transform.scale(self.binImage, (350, 250)), (self.xPos,self.yPos))
+            self.gameDisplay.blit(pygame.transform.scale(self.binImage, (150, 250)), (self.xPos,self.yPos))
 
 

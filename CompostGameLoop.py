@@ -1,6 +1,6 @@
 import pygame
 from GameSceneManager import GameSceneManager
-
+from Trash import Trash
 
 #Initializes some elements of pygame
 pygame.init()
@@ -21,7 +21,14 @@ gameIsRunning = True
 sceneManager = GameSceneManager(gameDisplay);
 
 #Load the images
-#bananaImg = pygame.image.load('Images/banana.png')
+bananaImg = pygame.image.load('Images/banana.png')
+appleImg = pygame.image.load('Images/apple_core.png')
+balloonImg = pygame.image.load('Images/banana.png')
+bottleImg = pygame.image.load('Images/bottle.png')
+canImg = pygame.image.load('Images/can.png')
+chipBagImg = pygame.image.load('Images/chip_bag.png')
+watermelonImg = pygame.image.load('Images/watermelon.png')
+
 
 #This loop constantly runs to keep the game running     
 #  (until the player exits the window)
@@ -43,8 +50,6 @@ while gameIsRunning:
 	
 	#pygame.draw.rect(gameDisplay, [255, 255, 255], rect)
 	#gameDisplay.blit(pygame.transform.scale(bananaImg, (800, 600)), (0, 0))
-
-
 
 	#Update the game
 	clock.tick(60)

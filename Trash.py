@@ -30,6 +30,8 @@ class Trash():
 		self.selected = False
 		self.trashImage = pygame.image.load('Images/'+trashImage)
 		self.screen = gameDisplay
+		self.canMove = False
+		self.show = True
 
 
 	def move(self, deltaX, deltaY):
@@ -49,6 +51,9 @@ class Trash():
 	def deselect(self):
 		self.selected = False
 
+	def getPos(self):
+		return (self.xPos, self.yPos)
+
 	def contains(self, mouseX, mouseY):
 		imageWidth = self.trashImage.get_width()
 		imageHeight = self.trashImage.get_height()
@@ -59,12 +64,25 @@ class Trash():
 			return True
 		return False
 
+	def hide(self):
+		self.show = False
+
+	def setMove(self, moveStatus):
+		self.canMove = moveStatus
+
+
 	def drawTrash(self, event):
-		self.screen.blit(pygame.transform.scale(self.trashImage, (75, 75)), (self.xPos, self.yPos))
-		self.dragTrash(event)
+
+		if self.show:
+			self.screen.blit(pygame.transform.scale(self.trashImage, ((int)(self.trashImage.get_width()/20), (int)(self.trashImage.get_height()/20))), (self.xPos, self.yPos))
+		
+		if self.canMove:
+			self.dragTrash(event)
+
 
 	def dragTrash(self, event):
 		mouse_pos = pygame.mouse.get_pos()
+
 		mouse_x = mouse_pos[0] 
 		mouse_y = mouse_pos[1]
 		offset_x = 0

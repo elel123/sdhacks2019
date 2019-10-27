@@ -11,7 +11,7 @@ class GarbageRoom(GameScene):
 
 
 		self.roomImage = pygame.image.load('Images/garbage_room.jpg')
-		self.inventory = pygame.Rect(0, 0, 800, 50)
+		self.inventory = pygame.Rect(0, 0, 800, 80)
 
 		#The trash bins
 		self.compostBin = Bin('compost', 200, 350, self.gameDisplay)
@@ -23,9 +23,10 @@ class GarbageRoom(GameScene):
 	def drawScene(self, event):
 		#Method to be called in an infinite loop
 		if self.showScene:
-			self.gameDisplay.blit(pygame.transform.scale(self.roomImage, (800,550)), (0,50))
-			self.trash.drawTrash(event)
 			pygame.draw.rect(self.gameDisplay, [122,112,43], self.inventory)
+			self.gameDisplay.blit(pygame.transform.scale(self.roomImage, (800,520)), (0,80))
+			self.trash.drawTrash(event)
+			
 
 			#Check if the mouse has hovered over the bins
 			mousePos = pygame.mouse.get_pos()

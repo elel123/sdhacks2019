@@ -67,12 +67,17 @@ class Trash():
 		mouse_pos = pygame.mouse.get_pos()
 		mouse_x = mouse_pos[0] 
 		mouse_y = mouse_pos[1]
+		offset_x = 0
+		offset_y = 0
+
 		if ( self.contains(mouse_pos[0], mouse_pos[1]) and 
 			 event.type == pygame.MOUSEBUTTONDOWN):
 			self.selected = True
+			offset_x = mouse_x - self.xPos
+			offset_y = mouse_y - self.yPos
 		elif event.type == pygame.MOUSEBUTTONUP:
 			self.selected = False
 
 		if self.selected:
-			self.xPos = mouse_x + (self.image.get_width() / 2.0)
-			self.yPos = mouse_y + (self.image.get_height() / 2.0)
+			self.xPos = mouse_x - offset_x 
+			self.yPos = mouse_y - offset_y

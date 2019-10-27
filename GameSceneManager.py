@@ -2,6 +2,7 @@ import pygame
 from GameScene import GameScene
 from GarbageRoom import GarbageRoom
 from Trash import Trash
+from StartScreen import StartScreen
 
 
 class GameSceneManager():
@@ -32,7 +33,7 @@ class GameSceneManager():
 
 
 		#List that contains all the scenes
-		self.gameScenes = [GarbageRoom(gameDisplay, initTrashList), ]
+		self.gameScenes = [StartScreen(gameDisplay), GarbageRoom(gameDisplay, initTrashList), ]
 
 		#turn on the start screen
 		self.gameScenes[0].setSceneState()
